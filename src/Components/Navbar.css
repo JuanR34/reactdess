@@ -1,0 +1,21 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+.navbar {
+    margin-top: 0;
+    padding-top: 0;
+    background-color: black;
+    width: 1366px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.title {
+    color: white;
+}
+
+.boton {
+    color: white;
+}

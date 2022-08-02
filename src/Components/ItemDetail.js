@@ -1,7 +1,7 @@
 import ItemCount from "./ItemCount";
 import { ContainerProduct } from './OtherStylesComponents'
 
-const Item = ({ items = [], onAdd }) => {
+const ItemDetail = ({ items = [], onAdd }) => {
     return (
         <ContainerProduct>
         {
@@ -10,7 +10,7 @@ const Item = ({ items = [], onAdd }) => {
                 <ItemCount 
                  key={item.id}
                  id={item.id}
-                 price={item.cost}
+                 price={item.price}
                  pictureUrl={item.pictureUrl}
                  stock={item.stock}
                  onAdd={onAdd}
@@ -23,4 +23,4 @@ const Item = ({ items = [], onAdd }) => {
     )
   }
 
-export default Item;
+export default ItemDetail;

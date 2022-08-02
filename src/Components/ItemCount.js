@@ -32,10 +32,10 @@ const ItemCount = ({
                     <h6>{title}</h6>
                     <p>{description}</p>
                     <p>{cantidad} artículos</p>
+                    <p>{price}</p>
                     <button onClick={increment}>+</button>
                     <button onClick={decrement}>-</button>
-                    <button onClick={() => onAdd(id, Number(cantidad))}>Agregar al carrito</button>
-                    <p>{price}</p>
+                    <button onClick={() => onAdd(id, Number(cantidad))}>Agregar al carrito</button>  
                 </div>
             </div>
         </ContainerProduct>

@@ -1,11 +1,11 @@
-import ItemDetail from './ItemDetail'
+import Item from './Item'
 
 //const ItemList = (props) => {+
   const ItemList = ({items}) => {
   
     return (
       <div>
-        <ItemDetail items = {items} />
+        <Item items = {items} />
       </div>
     );
   }

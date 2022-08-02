@@ -1,26 +1,28 @@
-import ItemCount from "./ItemCount";
-import { ContainerProduct } from './OtherStylesComponents'
+import ItemCount from './ItemCount'
+import { ContainerProduct } from './OtherStylesComponents';
 
-const ItemDetail = ({ items = [], onAdd }) => {
-    return (
+const ItemDetail = ({producto}) => {
+      const addProducto = (cantidad) => {
+        alert (`Agregaste ${cantidad} ${producto.title} producto al carrito`);
+      };
+
+      return (
         <ContainerProduct>
-        {
-            items.length > 0
-            ? items.map(item => 
-                <ItemCount 
-                 key={item.id}
-                 id={item.id}
-                 price={item.price}
-                 pictureUrl={item.pictureUrl}
-                 stock={item.stock}
-                 onAdd={onAdd}
-                 title={item.title}
-                 description={item.description}
-                 />)
-            : <p>Cargando...</p>
-      }
-      </ContainerProduct>
-    )
-  }
+        <div className='divDetailContainer'>
+          <p className='DetailTitle'>Detalle producto</p>
+             <div className='imgDetailContainer'>
+                 <img src={producto.pictureUrl}/>
+             </div>
+             <div>
+                <span className="titleProduct">{producto.title}</span>
+                <p className='descriptionProduct'>{producto.description}</p>
+                <span className='priceProduct'>{producto.price}</span>
+                <span>{producto.stock}</span>
+                <ItemCount addProducto={addProducto} stock={5}/>
+             </div>
+        </div>
+        </ContainerProduct>
+      )
+    }
 
 export default ItemDetail;

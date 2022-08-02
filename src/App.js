@@ -2,21 +2,22 @@ import './App.css';
 import Navbar from './Components/Navbar';
 import ItemListContainer from './Components/ItemListContainer'
 import { useState } from 'react';
+import { Cart } from './Components/Cart';
 
 
-const Cart = ({ cartItems = [] }) => {
-  console.info('Cart updated:', cartItems)
-  return (
-  <div className="App">
-    <h1>Bienvenidos a</h1>
-    <h2>VeganShop</h2>
-    {cartItems.length > 0 && (cartItems.map(cartItem => (<div>
-      {cartItem.product.title + " x " + cartItem.qty}
-    </div>)))
-    }
-    <hr />
-  </div>
-)}
+// const Cart = ({ cartItems = [] }) => {
+//   console.info('Cart updated:', cartItems)
+//   return (
+//   <div className="App">
+//     <h1>Bienvenidos a</h1>
+//     <h2>VeganShop</h2>
+//     {cartItems.length > 0 && (cartItems.map(cartItem => (<div>
+//       {cartItem.product.title + " x " + cartItem.qty}
+//     </div>)))
+//     }
+//     <hr />
+//   </div>
+// )}
 
 function App() {
   // [{ producto, qty },

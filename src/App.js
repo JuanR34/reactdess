@@ -1,49 +1,30 @@
 import './App.css';
 import Navbar from './Components/Navbar';
 import ItemListContainer from './Components/ItemListContainer'
-import { useState } from 'react';
 import { Cart } from './Components/Cart';
+import ItemDetailContainer from './Components/ItemDetailContainer'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
-// const Cart = ({ cartItems = [] }) => {
-//   console.info('Cart updated:', cartItems)
-//   return (
-//   <div className="App">
-//     <h1>Bienvenidos a</h1>
-//     <h2>VeganShop</h2>
-//     {cartItems.length > 0 && (cartItems.map(cartItem => (<div>
-//       {cartItem.product.title + " x " + cartItem.qty}
-//     </div>)))
-//     }
-//     <hr />
-//   </div>
-// )}
 
 function App() {
-  // [{ producto, qty },
-  const [cart, updateCart] = useState([])
-
-  const addToCart = ({product, qty}) => {
-    const newCartItem = { product, qty };
-    const cartItem = cart.find(x => x.product.id === product.id)
-
-    // retorna antes y la ejecucion de la funcioncion termina en el bloque del if: early return
-    if(!cartItem) {
-      return updateCart([...cart, newCartItem])
-    } 
-
-    cartItem.qty = qty;
-    const cartWithItem = cart.filter(x => x.id === product.id)
-    updateCart([...cartWithItem, cartItem])
-  }
 
   return (
     <>
-      <Navbar />
-      <Cart cartItems={cart} />
-      <ItemListContainer addToCart={addToCart} />
+    <BrowserRouter>
+      <Navbar />  
+      <Cart/>       
+          <Routes>
+          <Route path='/' element={<ItemListContainer greeting= {"Todos nuestros productos"} />} />
+          <Route path='/category/:categoryId' element={<ItemListContainer greeting= {`Cargando productos`} />} />
+          <Route path='/detail/:productId' element={<ItemDetailContainer />} />
+          </Routes>
+    </BrowserRouter>
     </>
   );
-}
+  }
 
 export default App;
+
+
+
+

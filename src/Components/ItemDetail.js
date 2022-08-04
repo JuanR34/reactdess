@@ -1,26 +1,26 @@
 
-import { ContainerProduct } from './OtherStylesComponents';
+import ItemCount from './ItemCount'
 
-const ItemDetail = ({producto}) => {
+const ItemDetail = ({ detail }) => {
       const addProducto = (cantidad) => {
-        alert (`Agregaste ${cantidad} ${producto.title} producto al carrito`);
+        alert (`Agregaste ${cantidad} ${detail.name} productos al carrito`);
       };
 
       return (
-        <ContainerProduct>
-        <div className='divDetailContainer'>
-          <p className='DetailTitle'>Detalle producto</p>
-             <div className='imgDetailContainer'>
-                 <img src={producto.pictureUrl}/>
+        <>
+        <div className='ItemDetail__Container'>
+          <p className='ItemDetail__Title'>Detalle producto</p>
+             <div className='ItemDetail__imgDetailContainer'>
+                 <img src={detail.pictureUrl} alt={detail.name}/>
              </div>
              <div>
-                <span className="titleProduct">{producto.title}</span>
-                <p className='descriptionProduct'>{producto.description}</p>
-                <span className='priceProduct'>{producto.price}</span>
-                <span>{producto.stock}</span>
+                <h4 className="ItemDetail__title">{detail.title}</h4>
+                <p className='ItemDetail__description'>{detail.description}</p>
+                <span className='ItemDetail__price'>{detail.price}</span>
+                <ItemCount addProducto={addProducto} stock={detail.stock}/>
              </div>
         </div>
-        </ContainerProduct>
+        </>
       )
     }
 

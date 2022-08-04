@@ -1,13 +1,12 @@
-import Item from './Item'
+import React from "react";
+import Item from "./Item";
 
-//const ItemList = (props) => {+
-  const ItemList = ({items}) => {
-  
+const ItemList = ({ products }) => {
     return (
-      <div>
-        <Item items = {items} />
-      </div>
+        <ul className="itemList">
+        <Item products={products} />
+        </ul>
     );
-  }
-  
-  export default ItemList;
+}
+
+export default ItemList;

@@ -1,6 +1,5 @@
-let is_ok = true;
 
-const data = [
+const products = [
     {
       title: "Sal rosa de Himalaya",
       id: "1",
@@ -24,22 +23,37 @@ const data = [
       price: "$260",
       stock: "40",
       pictureUrl: "https://http2.mlstatic.com/D_NQ_NP_700261-MLA46331583948_062021-O.webp"
+    },
+    {
+      title: "Harina Integral de Trigo",
+      id: "4",
+      description: "Harina de campo orgánica",
+      price: "$360",
+      stock: "30",
+      pictureUrl: "https://http2.mlstatic.com/D_NQ_NP_611132-MLA49854264156_052022-O.webp"
     }
 ];
 
-const delayFetch = (time, task) => {
-    return new Promise((resolve, reject) => {
-        if (is_ok) {
-            setTimeout(() => {
-                resolve(task)
-            }, time);
-        } else {
-            reject("Error in the Fetch");
-        }
-    });
+export const getProducts =()=>{
+  return new Promise((resolve)=>{
+      setTimeout(()=>{
+          resolve(products)
+      }, 2000)
+  })
 }
 
+export const getProductById = (id) => {
+  return new Promise (resolve => {
+      setTimeout(() => {
+          resolve(products.find(prod => prod.id === id))
+      }, 2000)
+  })
+}
 
-const fetchProducts = () => delayFetch(200, data)
-
-export default fetchProducts
+export const getProductsByCategory = (cat) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(products.filter(prod => prod.category === cat));
+    }, 2000);
+  });
+};

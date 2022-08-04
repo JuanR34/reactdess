@@ -1,32 +1,57 @@
-import ItemCount from './ItemCount';
 import ItemList from './ItemList'
 import { useEffect, useState } from "react";
-import fetchProducts from "../Utils/Fetch";
+import { getProducts, getProductsByCategory } from '../Utils/Fetch';
+import { useParams } from "react-router-dom";
 
-const ItemListContainer = ({ props, addToCart }) => {
-  const [datos, setDatos] = useState([])
+const ItemListContainer =  (props) => {
+  const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true);
+  const params = useParams();
+
 
   useEffect(() => {
-    fetchProducts()
-      .then(result => {
-        setDatos(result)
-      })
-      .catch(err => console.log(err))
-  }, []);
+    setLoading(true);
+    if (params.categoryId) {
+      getProductsByCategory(params.categoryId)
+        .then((response) => {
+          setProducts(response);
+        })
+        .catch((reject) => {
+          console.log(`Ocurrio un error ${reject}`);
+        })
+        .finally((response) => {
+          setLoading(false);
+        });
+    } 
+    
+     else {
+      getProducts()
+        .then((response) => {
+          setProducts(response);
+        })
+        .catch((reject) => {
+          console.log(`Ocurrio un error ${reject}`);
+        })
+        .finally((response) => {
+          setLoading(false);
+        });
+    }
+  }, [params.categoryId]);
 
-  const onAdd = (id, qty) => {
-    const product = datos.find(x => id === x.id)
-    console.info("Agregaste: " + product.title + " x " + qty + " items al carrito");
-    addToCart({product, qty})
+  if (!loading) {
+    return (
+      <div>
+        <p className="itemListContainer__title">{props.greeting}</p>
+        <ItemList products={products} />
+      </div>
+    );
   }
-  
+
   return (
-    <div className="titleIndex">
-      <ItemCount/>
-      <h4>greetings</h4>
-      <ItemList items={datos} onAdd={onAdd} />
+    <div>
+      <p className="itemListContainer__title">Cargando {params.indexId}</p>
     </div>
-  )
-}
+  );
+};
 
 export default ItemListContainer;

@@ -1,14 +1,19 @@
 import styled from 'styled-components';
 
 export const ContainerProduct = styled.div`
-  margin-left: 20px;
-  width: 400px;
+  background-color: grey;
+  margin-left: 10px;
+  width: 300px;
   display: inline-block;
   text-align-last: center;
   img {
-    width: 230px;
+    width: 200px;
   }
   p {
-    font-size: smaller;
+    font-size: small;
   }
 `;
+
+export const techonav = styled.div`
+background-color: yellow;
+`

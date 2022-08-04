@@ -1,21 +1,36 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import Fetch from "./Utils/Fetch";
-import ContainerProduct from "./ItemDetail";
+import { getProductById } from "../Utils/Fetch";
+import ItemDetail from './ItemDetail';
 
-const DetailContainer = () => {
-    const [dato, setDato] = useState({});
-    const { idItem } = useParams();
+
+const ItemDetailContainer = () => {
+    const [products, setProducts] = useState();
+    const [loading, setLoading] = useState(true);
+    const params = useParams();
 
     useEffect(() => {
-        Fetch(1000, data.find(item => item.id === parseInt(idItem)))
-            .then(result => setDato(result))
-            .catch(err => console.log(err))
-    }, []);
-    
-    return (
-        <ContainerProduct item={dato} />
-    );
-}
+      getProductById(params.productId)
+        .then((res) => {
+          setProducts(res);
+          setLoading(false);
+        })
+        .catch((res) => {
+          console.log("Ocurrio un error");
+        });
+    }, [params]);
+  
+    if (!loading) {
+      return (
+        <div>
+          <ItemDetail detail={products} />
+        </div>
+      );
 
-export default DetailContainer;
+    }
+    return <div>
+      <p className="DetailContainer__title">Cargando detalle..</p>
+    </div>;
+  };
+
+export default ItemDetailContainer;

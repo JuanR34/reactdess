@@ -1,8 +1,6 @@
 
 import { useState } from 'react';
-import {
-    ContainerProduct
-} from './OtherStylesComponents'
+import {ContainerProduct} from './OtherStylesComponents'
 
 const ItemCount = ({
     id,
@@ -12,7 +10,7 @@ const ItemCount = ({
     description,
     onAdd
 }, initial) => {
-    const [cantidad, setCantidad] = useState(0);
+    const [cantidad, setCantidad] = useState(0); 
 
     const increment = () => {
         if (cantidad < 5) setCantidad(cantidad + 1);

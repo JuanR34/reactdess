@@ -3,6 +3,7 @@ const products = [
     {
       title: "Sal rosa de Himalaya",
       id: "1",
+      category: 'Especias',
       description: "Sal fina rosada pura",
       price: "$300",
       stock: "50",
@@ -11,6 +12,7 @@ const products = [
     {
       title: "Mix Frutos Secos",
       id: "2",
+      category: 'Legumbres',
       description: "Almendras, nueces, castañas y avellanas",
       price: "$1000",
       stock: "20",
@@ -19,6 +21,7 @@ const products = [
     {
       title: "Fideos de Arroz",
       id: "3",
+      category: 'Pastas',
       description: "Fideos sin gluten sabor Morrón",
       price: "$260",
       stock: "40",
@@ -27,6 +30,7 @@ const products = [
     {
       title: "Harina Integral de Trigo",
       id: "4",
+      category: 'Pastas',
       description: "Harina de campo orgánica",
       price: "$360",
       stock: "30",

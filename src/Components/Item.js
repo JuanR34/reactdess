@@ -8,12 +8,11 @@ const Item = ({ products }) => {
           <img alt={product.title} className="Item__img" src={product.pictureUrl}></img>
         <div className="Item__header">
           <span className="Item__title">{product.title}</span>
-          <br/>
-          <span className="Item__price">{product.price}</span>
+          <span className="Item__price">{" $ "+ product.price}</span>
         </div>
           <p className="Item__category">{product.category}</p>
            <Link className="Item__btn" to={`/detail/${product.id}`}>Ver detalle del producto</Link>
-          <p className="Item__stock">{product.stock} Stock </p> 
+          <p className="Item__stock">{product.stock}</p>
         </li>
    ));
   };

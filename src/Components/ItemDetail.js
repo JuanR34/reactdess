@@ -1,42 +1,36 @@
 import ItemCount from './ItemCount';
-import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useState, useContext } from 'react';
+import './ItemDetail.css';
+import { CartContext } from '../Context/CartContext';
 
+const ItemDetail = ({ id, title, pictureUrl, description, price, stock }) => {
+  
+  const [quantity, setQuantity] = useState(0)
+  const { addItem, getProductQuantity } = useContext(CartContext)
 
+  const quantityAdded = getProductQuantity(id)
 
-const ItemDetail = ({ detail }) => {
-  const [cantidad, setCantidad] = useState(0)
-  const navigate = useNavigate()
-  const addProducto = (cantidad) => {
-      console.log('agregue al carrito: ', cantidad)
-      setCantidad(cantidad)
+  const handleOnAdd = (quantity) => {
+      console.log('Se agregaron '+ quantity + title + 'al Carrito');
+      setQuantity(quantity)
+      addItem({id, title, price, quantity})
   }
-
-  const handleAdd = (quantityToAdd) => {
- 
-    setCantidad(quantityToAdd)
- 
-    navigate("/cart")
-}
-
-const volver = useNavigate()
-
 
       return (
         <>
         <div className='ItemDetail__Container'>
           <p className='ItemDetail__Title'>Detalle producto</p>
              <div className='ItemDetail__imgDetailContainer'>
-                 <img src={detail.pictureUrl} alt={detail.name}/>
+                 <img src={pictureUrl} alt='picture'/>
              </div>
              <div>
-                <h4 className="ItemDetail__title">{detail.title}</h4>
-                <p className='ItemDetail__description'>{detail.description}</p>
-                <span className='ItemDetail__price'>{detail.price}</span>
+                <h4 className="ItemDetail__title">{title}</h4>
+                <p className='ItemDetail__description'>{description}</p>
+                <span className='ItemDetail__price'>{"$"+price}</span>
                 <div>
-                { cantidad > 0 ? <Link className='link_carrito' to='/cart'>Ir al carrito</Link> 
-                :<ItemCount initial={1} stock={detail.stock} addProducto={addProducto} onAdd={handleAdd}/>}
-                <button onClick={()=> volver("/")}>Volver</button>
+                {quantity > 0 ? <Link className='FinalizarLaCompra' to='/cart'>Finalizar Compra</Link> 
+                : <ItemCount initial={quantityAdded} stock={stock} onAdd={handleOnAdd}/>}
                 </div>
              </div>
         </div>

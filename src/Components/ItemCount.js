@@ -1,6 +1,9 @@
 
 import { useState } from 'react';
-import {ContainerProduct} from './OtherStylesComponents'
+import {
+    ContainerProduct
+} from './OtherStylesComponents'
+import Cartwidget from './Cartwidget';
 
 const ItemCount = ({
     id,
@@ -8,32 +11,34 @@ const ItemCount = ({
     price,
     pictureUrl,
     description,
+    stock,
     onAdd
 }, initial) => {
-    const [cantidad, setCantidad] = useState(0); 
+    const [quantity, setQuantity] = useState(0);
 
     const increment = () => {
-        if (cantidad < 5) setCantidad(cantidad + 1);
+        if (quantity < 5) setQuantity(quantity + 1);
     }
 
     const decrement = () => {
-        if (cantidad > 0) setCantidad(cantidad - 1);
+        if (quantity > 0) setQuantity(quantity - 1);
     }
 
     return (
         <ContainerProduct>
-            <div className="product-container">
-                <div className="product-image">
+            <div className="productContainer">
+                <div className="productImage">
                     <img src={pictureUrl} alt={title}/>
                 </div>
-                <div className="product-info">
-                    <h6>{title}</h6>
+                <div className="productInfo">
+                    <p>{title}</p>
                     <p>{description}</p>
-                    <p>{cantidad} artículos</p>
-                    <p>{price}</p>
+                    <p>{quantity} artículos</p>
                     <button onClick={increment}>+</button>
                     <button onClick={decrement}>-</button>
-                    <button onClick={() => onAdd(id, Number(cantidad))}>Agregar al carrito</button>  
+                    <button disabled={stock === 0 ? true : null} 
+                    onClick={() => onAdd(quantity)} className='cart_btn'>Agregar al <Cartwidget/></button>
+                    <p>{price}</p>
                 </div>
             </div>
         </ContainerProduct>

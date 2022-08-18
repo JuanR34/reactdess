@@ -3,9 +3,9 @@ import { memo } from 'react';
 
 const ItemList = ({ products }) => {
     return (
-        <ul className="itemList">
+        <div>
         <Item products={products} />
-        </ul>
+        </div>
     );
 }
 

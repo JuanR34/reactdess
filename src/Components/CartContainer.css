@@ -1,0 +1,21 @@
+.ButtonCartContainerOne {
+    margin-left: 10px;
+    background-color: rgb(197, 80, 80);
+    font-size: medium;
+}
+
+.ButtonCartContainerTwo {
+    margin-left: 5px;
+    background-color: rgb(57, 156, 57);
+    font-size: medium;
+}
+
+.ButtonTotal {
+    font-size: large;
+}
+
+.ButtonTotalProductos {
+    font-size: 20px;
+    margin-left: 580px;
+    margin-top: 30px;
+}

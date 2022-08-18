@@ -1,9 +1,8 @@
-import DetailCart from "./DetailCart";
 
-const Cart = ({products}) => {
+const Cart = () => {
     return(
         <div>
-            {products.map(product => (<DetailCart product={product} key={product.id}/>))}
+          
         </div>
         )
 }

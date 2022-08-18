@@ -1,8 +1,5 @@
-
+import './ItemCount.css'
 import { useState } from 'react';
-import {
-    ContainerProduct
-} from './OtherStylesComponents'
 import Cartwidget from './Cartwidget';
 
 const ItemCount = ({
@@ -25,8 +22,7 @@ const ItemCount = ({
     }
 
     return (
-        <ContainerProduct>
-            <div className="productContainer">
+            <div className="FlexContainer">
                 <div className="productImage">
                     <img src={pictureUrl} alt={title}/>
                 </div>
@@ -41,7 +37,6 @@ const ItemCount = ({
                     <p>{price}</p>
                 </div>
             </div>
-        </ContainerProduct>
     );
 }
 

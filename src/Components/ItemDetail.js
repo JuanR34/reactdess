@@ -27,7 +27,7 @@ const ItemDetail = ({ id, title, pictureUrl, description, price, stock }) => {
              <div>
                 <h4 className="ItemDetail__title">{title}</h4>
                 <p className='ItemDetail__description'>{description}</p>
-                <span className='ItemDetail__price'>{"$"+price}</span>
+                <span className='ItemDetail__price'>{price}</span>
                 <div>
                 {quantity > 0 ? <Link className='FinalizarLaCompra' to='/cart'>Finalizar Compra</Link> 
                 : <ItemCount initial={quantityAdded} stock={stock} onAdd={handleOnAdd}/>}

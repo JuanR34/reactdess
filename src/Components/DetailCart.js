@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { CartContext } from '../Context/CartContext'
+import './DetailCart.css'
 
 
 const DetailCart = ({ id, quantity, title, price }) => {
@@ -9,28 +10,26 @@ const DetailCart = ({ id, quantity, title, price }) => {
         removeItem(id)
     }
 
-    const multi = price * quantity
-
     return (
-        <article className='CardCartItem'>
+        <article>
             <header>
-                <h2 className="TitleDetail">
+                <h5 className="TitleDetail">
                     {title}
-                </h2>
+                </h5>
             </header>
-            <section className='QuantityDetail'>
-                <p className="InfoCartItem">
+            <section className='QuantityContainer'>
+                <p>
                     Cantidad: {quantity}
                 </p>
-                <p className='PriceDetail'>
-                    Precio: ${price}
+                <p>
+                    Precio: {price}
                 </p>
             </section>           
             <footer>
                  <p className="SubtotalDetail">
-                     Subtotal: ${multi}
+                     Subtotal: ${price * quantity}
                  </p>
-                 <button className='ButtonCartItem' onClick={() => handleRemove(id)}>X</button>
+                 <button className='ButtonDetailCart' onClick={() => handleRemove(id)}>x</button>
             </footer>
         </article>
     )

@@ -1,0 +1,12 @@
+.QuantityContainer {
+    font-size: medium;
+}
+
+.SubtotalDetail {
+    font-size: medium;
+}
+
+.ButtonDetailCart {
+    background-color: rgb(242, 146, 44);
+    font-size: 15px;
+}

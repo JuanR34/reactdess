@@ -8,14 +8,14 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className='navbar'>
-      <Link to='/'>
+      <Link className="OptionLogo" to='/'>
           <FaLeaf/> VeganShop
       </Link>
       <div className='Categorias'>
         <ul>
-           <Link to='/category/Especias' className="Option">Especias</Link>
-           <Link to='/category/Legumbres' className="Option">Legumbres</Link>
-           <Link to='/category/Pastas' className="Option">Pastas</Link>
+           <Link to='/category/Especias' className="OptionCategory">Especias</Link>
+           <Link to='/category/Legumbres' className="OptionCategory">Legumbres</Link>
+           <Link to='/category/Pastas' className="OptionCategory">Pastas</Link>
         </ul>
       </div>
       <Cartwidget/>

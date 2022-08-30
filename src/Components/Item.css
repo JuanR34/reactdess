@@ -1,0 +1,44 @@
+.ItemHeader {
+    text-align: center;
+	width: 350px;
+    height: 450px;
+    margin: 40px;
+	overflow: hidden;
+	background:rgb(255, 255, 255);
+	box-shadow: 0px 1px 10px rgb(2, 72, 52);
+}
+
+.ItemImg {
+    height: 200px;  
+    width: 200px;
+    margin-top: 20px;
+    padding-top: 5px;
+    margin-bottom: 50px;
+    object-fit: cover;
+}
+
+.ItemTitle {
+    font-family: 'bebas neue';
+    margin-top: 10px;
+}
+
+.ItemPrice {
+    font-family: 'bebas neue';
+
+}
+
+.ItemBtn {
+    background-color: rgb(5, 121, 88);
+    border-radius: 5px;
+    color: white;
+    font-family: 'bebas neue';
+    margin-top: 20px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.ItemStock {
+    font-family: 'bebas neue';
+}

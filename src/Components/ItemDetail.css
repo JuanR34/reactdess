@@ -1,3 +1,55 @@
-.irAlCarrito {
+.ItemDetailContainer {
+    text-align: center;
+	width: 450px;
+    height: 500px;
+    margin-left: 450px;
+    margin-top: 30px;
+	overflow: hidden;
+	background:rgb(255, 255, 255);
+	box-shadow: 0px 1px 10px rgb(9, 147, 92);
+}
+
+.ImgDetailContainer {
+    height: 60%;  
+    width: 60%;
+    margin-top: -20px;
     padding-top: 20px;
+    margin-bottom: 50px;
+    object-fit: scale-down;
+}
+
+.ItemDetailTitle {
+    font-family: 'bebas neue';
+    font-size: 1.5rem;
+    background-color: var(--color-nav-btn);
+    padding-left: 38rem;
+    margin-top: 20px;
+    color: rgb(1, 157, 113);
+}
+
+.ItemDetailSubtitle {
+    font-family: 'bebas neue';
+    margin-top: -50px;
+}
+
+.ItemDetailDescription {
+    font-family: 'bebas neue';
+}
+
+.ItemDetailPrice {
+    font-family: 'bebas neue';
+    padding-top: 0px;
+}
+
+.FinalizarLaCompra {
+    font-family: 'bebas neue';
+    font-size: smaller;
+    color: white;
+    padding-top: 18px;
+    background-color: rgb(1, 157, 113) ;
+    display: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 70%;
+    margin-left: 191px;
 }

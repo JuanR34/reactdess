@@ -1,3 +1,4 @@
+let is_ok = true;
 
 const products = [
     {

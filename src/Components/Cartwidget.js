@@ -4,6 +4,7 @@ import { Cart } from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { CartContext } from '../Context/CartContext';
+import './Cartwidget.css'
 
 const Cartwidget = () => {
   const { getQuantity } = useContext(CartContext)
@@ -13,8 +14,10 @@ const Cartwidget = () => {
   if(totalQuantity === 0) {
     return (
         <>
-        <Cart/>
-        <a> {quantity}</a> 
+        <div className='ContainerCartwidget'>
+        <Cart className='NavbarCart'/>
+        <a  className='QuantityCart'> {quantity}</a> 
+        </div>
         </>
     )
 }
@@ -22,8 +25,8 @@ const Cartwidget = () => {
     return (
         <>
          <div> 
-         <Link to='/cart'>
-         <Cart color='white'/>
+         <Link to='/cart' className='CartCss'>
+         <Cart />
          {quantity}
          </Link>
          </div> 

@@ -1,9 +1,10 @@
 import Item from "./Item";
 import { memo } from 'react';
+import './ItemList.css'
 
 const ItemList = ({ products }) => {
     return (
-        <div>
+        <div className="DivItemList">
         <Item products={products} />
         </div>
     );

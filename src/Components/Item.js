@@ -1,19 +1,21 @@
 import { Link } from 'react-router-dom';
+import './Item.css';
 
 const Item = ({ products }) => {
 
     return products.map((product) => (
-      
-        <li key={product.id} className="Item__Id">
-          <img alt={product.title} className="Item__img" src={product.pictureUrl}></img>
-        <div className="Item__header">
-          <span className="Item__title">{product.title}</span>
-          <span className="Item__price">{product.price}</span>
+
+      <div className="ItemHeader">
+        <div key={product.id}>
+          <img alt={product.title} className="ItemImg" src={product.pictureUrl}></img>
+        <div>
+          <span className="ItemTitle">{product.title}</span>
+          <div className="ItemPrice">${product.price}</div>
+          <p className="ItemStock">STOCK {product.stock} UNIDADES</p>
         </div>
-          <p className="Item__category">{product.category}</p>
-           <Link className="Item__btn" to={`/detail/${product.id}`}>Ver detalle del producto</Link>
-          <p className="Item__stock">{product.stock}</p>
-        </li>
+           <Link className="ItemBtn" to={`/detail/${product.id}`}>Ver detalle del producto</Link>
+        </div>
+      </div>
    ));
   };
 

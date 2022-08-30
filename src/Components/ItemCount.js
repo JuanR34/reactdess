@@ -1,6 +1,7 @@
 import './ItemCount.css'
 import { useState } from 'react';
 import Cartwidget from './Cartwidget';
+import './ItemCount.css'
 
 const ItemCount = ({
     id,
@@ -29,11 +30,11 @@ const ItemCount = ({
                 <div className="productInfo">
                     <p>{title}</p>
                     <p>{description}</p>
-                    <p>{quantity} artículos</p>
-                    <button onClick={increment}>+</button>
-                    <button onClick={decrement}>-</button>
+                    <p className='QuantityItemCount'>{quantity} artículos</p>
+                    <button className='CartBtn' onClick={increment}>+</button>
+                    <button className='CartBtn' onClick={decrement}>-</button>
                     <button disabled={stock === 0 ? true : null} 
-                    onClick={() => onAdd(quantity)} className='cart_btn'>Agregar al <Cartwidget/></button>
+                    onClick={() => onAdd(quantity)} className='CartBtn'>Agregar al <Cartwidget/></button>
                     <p>{price}</p>
                 </div>
             </div>

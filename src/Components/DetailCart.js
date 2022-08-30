@@ -11,26 +11,20 @@ const DetailCart = ({ id, quantity, title, price }) => {
     }
 
     return (
-        <article>
-            <header>
-                <h5 className="TitleDetail">
-                    {title}
-                </h5>
-            </header>
-            <section className='QuantityContainer'>
-                <p>
-                    Cantidad: {quantity}
-                </p>
-                <p>
-                    Precio: {price}
-                </p>
-            </section>           
-            <footer>
-                 <p className="SubtotalDetail">
-                     Subtotal: ${price * quantity}
-                 </p>
-                 <button className='ButtonDetailCart' onClick={() => handleRemove(id)}>x</button>
-            </footer>
+        <article className='DetailCartContainer'>
+            <h5 className="TitleDetail">
+               {title}
+            </h5>
+            <h5 className='QuantityContainer'>
+               Cantidad: {quantity}
+            </h5>
+            <h5 className='PriceContainer'>
+               Precio: {price}
+            </h5>
+            <h5 className="SubtotalDetail">
+               Subtotal: ${price * quantity}
+            </h5>
+            <button className='ButtonDetailCart' onClick={() => handleRemove(id)}>x</button>      
         </article>
     )
 }

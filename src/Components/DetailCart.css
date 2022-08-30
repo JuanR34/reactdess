@@ -1,12 +1,49 @@
+.DetailCartContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-left: 10px;
+    margin-top: 20px;
+    background-color:  rgb(192, 170, 99);
+    color: white;
+    border-radius: 30px;
+}
+
 .QuantityContainer {
-    font-size: medium;
+    font-size:  25px;
+    font-family: 'bebas neue';
+    padding-left: 120px;
 }
 
 .SubtotalDetail {
-    font-size: medium;
+    font-size:  25px;
+    font-family: 'bebas neue';
+    padding-left:  120px;
 }
 
 .ButtonDetailCart {
-    background-color: rgb(242, 146, 44);
+    font-family: 'bebas neue';
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    border: none;
+    background-color: rgb(255, 255, 255);
     font-size: 15px;
+    padding-top: 2px;
+    color: rgb(192, 170, 99);
+    margin-left: 100px;
+}
+
+.TitleDetail {
+    font-size:  25px;
+    font-family: 'bebas neue';
+    padding-left:  130px;
+}
+
+.PriceContainer {
+    padding-left:  120px;
+    font-size: 25px;
+    font-family: 'bebas neue';
 }

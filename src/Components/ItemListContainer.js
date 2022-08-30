@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 // import { getProducts, getProductsByCategory } from '../Utils/Fetch';
 import { useParams } from "react-router-dom";
 import { getDocs, collection, query, where } from 'firebase/firestore';
-import { db } from '../Firebase/Index.js/Index'
+import { db } from '../Firebase/Index/Index'
+import './ItemListContainer.css'
 
 const ItemListContainer =  (props) => {
   const [products, setProducts] = useState([])
@@ -31,12 +32,12 @@ const ItemListContainer =  (props) => {
 }, [categoryId])
 
   if(loading) {
-     return <h2 className='item'>Cargando productos</h2>
+     return <h2 className='TitleIlc'>Cargando productos</h2>
     }
 
    return (
      <>
-      <h3>{` ${categoryId || ''}`}</h3>
+      <h3 className='Ilc'>{` ${categoryId || ''}`}</h3>
       <ItemList products={products} />
     </>
 )}

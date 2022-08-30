@@ -1,0 +1,21 @@
+.productInfo {
+    margin-top: -50px;
+}
+
+.CartBtn {
+    font-family: 'bebas neue';
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 40px;
+    background-color:rgb(9, 147, 92);
+    color: white;
+    border-radius: 5px;
+    border-style: hidden;
+}
+
+.QuantityItemCount {
+    font-family: 'bebas neue';
+    text-align: center;
+}

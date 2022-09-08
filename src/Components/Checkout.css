@@ -1,0 +1,57 @@
+.LogoCheckout {
+    font-family: 'bebas neue';
+    text-align: center;
+    padding-left: -15px;
+    font-size: 35px;
+    text-decoration: none;
+    border-style: none;
+    cursor: pointer;
+    outline: inherit;
+    text-shadow: 1px 1px rgba(141, 136, 136, 0.293), -1px -1px #333;
+    color:  rgb(1, 157, 113);
+  }
+
+.backgroundCheckout {
+    margin-top: 100px;
+    padding: 50px;
+    margin-left: 500px;
+    margin-right: 500px;
+    background-color: beige;
+    border-radius: 50px;
+
+}
+
+.ContainerCheckout {
+    font-family: 'bebas neue';
+    text-align: center;
+    margin-top: 30px;
+}
+
+.inputCheckout {
+    margin-left: 28px;
+    margin-top: 10px;
+}
+
+.inputCheckout2 {
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.inputCheckout3 {
+    margin-left: 22px;
+    margin-top: 10px;
+}
+
+.buttonCheckout {
+    background-color: rgb(1, 157, 113);
+    color: rgb(255, 255, 255);
+    font-family: 'bebas neue';
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin-left: 110px;
+    margin-top: 30px;
+    padding-top: 14px;
+    padding-left: 7px;
+    border: none;
+}

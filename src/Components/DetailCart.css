@@ -1,20 +1,28 @@
+.TitleCart {
+    margin-top: 20px;
+}
+
+
 .DetailCartContainer {
     display: flex;
     flex-wrap: wrap;
-    padding-top: 10px;
+    margin-top: 20px;
+    padding-top: 12px;
+    padding-bottom: 10px;
     margin-left: 50px;
     margin-right: 50px;
-    padding-left: 10px;
-    margin-top: 20px;
-    background-color:  rgb(192, 170, 99);
+    padding-left: 2px;
+    background-color: beige;
     color: white;
     border-radius: 30px;
 }
+
 
 .QuantityContainer {
     font-size:  25px;
     font-family: 'bebas neue';
     padding-left: 120px;
+    color: rgb(255, 255, 255);
 }
 
 .SubtotalDetail {
@@ -32,18 +40,28 @@
     background-color: rgb(255, 255, 255);
     font-size: 15px;
     padding-top: 2px;
-    color: rgb(192, 170, 99);
+    color: rgb(1, 157, 113);
     margin-left: 100px;
+    text-shadow: 1px 1px rgba(252, 149, 23, 0.293), 1px 1px #333;
+
 }
 
 .TitleDetail {
     font-size:  25px;
     font-family: 'bebas neue';
     padding-left:  130px;
+    color: rgb(255, 255, 255);
 }
 
 .PriceContainer {
     padding-left:  120px;
     font-size: 25px;
     font-family: 'bebas neue';
+    color: rgb(255, 255, 255);
+}
+
+.LogoDetailCart {
+    margin-left: 160px;
+    padding-top: 5px;
+    color: rgb(1, 157, 113);
 }
